@@ -325,11 +325,27 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\BinaryFile.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\cpp_string_utility.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\File.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\LexicalAnalyzer.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\main.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TextFile.cpp"
 				>
 			</File>
 		</Filter>
@@ -339,11 +355,27 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\BinaryFile.h"
+				>
+			</File>
+			<File
+				RelativePath=".\cpp_string_utility.h"
+				>
+			</File>
+			<File
+				RelativePath=".\File.h"
+				>
+			</File>
+			<File
 				RelativePath=".\LexicalAnalyzer.h"
 				>
 			</File>
 			<File
 				RelativePath=".\resource.h"
+				>
+			</File>
+			<File
+				RelativePath=".\TextFile.h"
 				>
 			</File>
 		</Filter>
