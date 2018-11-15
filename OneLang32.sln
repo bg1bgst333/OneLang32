@@ -7,18 +7,24 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OneLang32Console", "OneLang
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Console|Win32 = Debug Console|Win32
 		Debug|Win32 = Debug|Win32
+		Release Console|Win32 = Release Console|Win32
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{267E5C81-3602-4A12-99C7-08F81FBB4B8E}.Debug Console|Win32.ActiveCfg = Debug Console|Win32
 		{267E5C81-3602-4A12-99C7-08F81FBB4B8E}.Debug|Win32.ActiveCfg = Debug|Win32
 		{267E5C81-3602-4A12-99C7-08F81FBB4B8E}.Debug|Win32.Build.0 = Debug|Win32
+		{267E5C81-3602-4A12-99C7-08F81FBB4B8E}.Release Console|Win32.ActiveCfg = Release Console|Win32
 		{267E5C81-3602-4A12-99C7-08F81FBB4B8E}.Release|Win32.ActiveCfg = Release|Win32
 		{267E5C81-3602-4A12-99C7-08F81FBB4B8E}.Release|Win32.Build.0 = Release|Win32
+		{0E2FE8FD-9EB6-4F52-9C62-DA1F3260DB50}.Debug Console|Win32.ActiveCfg = Debug Console|Win32
+		{0E2FE8FD-9EB6-4F52-9C62-DA1F3260DB50}.Debug Console|Win32.Build.0 = Debug Console|Win32
 		{0E2FE8FD-9EB6-4F52-9C62-DA1F3260DB50}.Debug|Win32.ActiveCfg = Debug|Win32
-		{0E2FE8FD-9EB6-4F52-9C62-DA1F3260DB50}.Debug|Win32.Build.0 = Debug|Win32
+		{0E2FE8FD-9EB6-4F52-9C62-DA1F3260DB50}.Release Console|Win32.ActiveCfg = Release Console|Win32
+		{0E2FE8FD-9EB6-4F52-9C62-DA1F3260DB50}.Release Console|Win32.Build.0 = Release Console|Win32
 		{0E2FE8FD-9EB6-4F52-9C62-DA1F3260DB50}.Release|Win32.ActiveCfg = Release|Win32
-		{0E2FE8FD-9EB6-4F52-9C62-DA1F3260DB50}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
