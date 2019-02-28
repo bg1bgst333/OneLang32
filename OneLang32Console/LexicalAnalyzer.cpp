@@ -38,6 +38,7 @@ BOOL CLexicalAnalyzer::Analyze(tstring tstrSourceFileName){
 				if (tstrToken != _T("")){	// •¶Žš—ñ‚ª“ü‚Á‚Ä‚¢‚é.
 					m_vectstrTokenList.push_back(tstrToken);	// m_vectstrTokenList‚É’Ç‰Á.
 				}
+				m_vectstrTokenList.push_back(_T("<Space>"));	// "<Space>"‚ð’Ç‰Á.
 				tstrToken = _T("");	// ""‚ÅƒŠƒZƒbƒg.
 			}
 			else if (ch == 0x0d){	// CR.
