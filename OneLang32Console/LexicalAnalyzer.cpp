@@ -23,7 +23,7 @@ BOOL CLexicalAnalyzer::Analyze(tstring tstrSourceFileName){
 		
 		// 読み込んだテキストを出力.
 		std::wcout << _T("----- start -----") << std::endl;	// "----- start -----"と出力.
-		std::wcout << pTextFile->m_tstrText << std::endl;	// pTextFile->m_tstrTextの内容を出力.
+		//std::wcout << pTextFile->m_tstrText << std::endl;	// pTextFile->m_tstrTextの内容を出力.
 		std::wcout << _T("----- end -----") << std::endl;	// "----- end -----"と出力.
 		
 		// 1文字ずつチェック.
@@ -32,6 +32,20 @@ BOOL CLexicalAnalyzer::Analyze(tstring tstrSourceFileName){
 		for (unsigned int i = 0; i < pTextFile->m_tstrText.length(); i++){	// 文字列長繰り返す.
 			unsigned int ch = pTextFile->m_tstrText.c_str()[i];	// i番目をchに格納.
 			if ((ch >= 0x41 && ch <= 0x5A) || (ch >= 0x61 && ch <= 0x7A)){	// アルファベットの場合.
+				tstrToken = tstrToken + pTextFile->m_tstrText.at(i);	// i番目を連結.
+			}
+			else if (ch > 0xff){	// 2バイト文字の場合もアルファベットと同じ.(ソースコードの文字コード関係なくワイド文字(UTF16)として読み込まれるため日本語の判定が比較的容易.)
+				// 先頭に"<WCS>"と付ける場合がある.
+				if (tstrToken  == _T("")){	// tstrTokenが空.
+					tstrToken = _T("<WCS>");	// "<WCS>"を代入.
+				}
+				else{	// そうでない場合でもありえる.
+					unsigned int top = tstrToken.c_str()[0];	// トークンのワイド文字の先頭のASCIIコードを取得.
+					if ((top >= 0x41 && top <= 0x5A) || (top >= 0x61 && top <= 0x7A)){	// アルファベットの場合.
+						tstrToken = _T("<WCS>") + tstrToken;	// 先頭に"<WCS>"を付ける.
+					}
+					// それ以外で例えば"aあaあ"の場合, "aあ"の時点で"<WCS>aあ"でトークンが保持されているので, このあとの"a"はそのまま連結, そのあとの"あ"はトークン先頭が"<"なので, 結果的に先頭に"<WCS>"付加もされず"あ"が連結される.
+				}
 				tstrToken = tstrToken + pTextFile->m_tstrText.at(i);	// i番目を連結.
 			}
 			else if (ch == 0x20){	// スペース.
@@ -72,7 +86,13 @@ BOOL CLexicalAnalyzer::Analyze(tstring tstrSourceFileName){
 		}
 		// トークン一覧を出力.
 		for (unsigned int i = 0; i < m_vectstrTokenList.size(); i++){ // トークンリスト分繰り返す.
-			std::wcout << m_vectstrTokenList[i] << std::endl;	// i番目を出力.
+			// ワイド文字はコンソール出力が厳しいので, 出力が簡単なモノを代理で出力.
+			if (m_vectstrTokenList[i].find(_T("<WCS>")) != std::string::npos){	// "<WCS>"があった場合.
+				std::wcout << _T("<WCS>") << std::endl;	// "<WCS>"を出力.
+			}
+			else{	// それ以外.
+				std::wcout << m_vectstrTokenList[i] << std::endl;	// i番目を出力.
+			}
 		}
 
 	}
