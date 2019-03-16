@@ -35,6 +35,7 @@ class CLexicalAnalyzer{
 		virtual ~CLexicalAnalyzer(){};	// デストラクタ~CLexicalAnalyzer
 		// publicメンバ関数
 		BOOL Analyze(tstring tstrSourceFileName);	// 解析を実行するメンバ関数Analyze.
+		tstring GetToken(unsigned int uiNo);	// 指定された番号のトークンを取得するメンバ関数GetToken.
 
 };
 

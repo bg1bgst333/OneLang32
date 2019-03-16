@@ -88,10 +88,10 @@ BOOL CLexicalAnalyzer::Analyze(tstring tstrSourceFileName){
 		for (unsigned int i = 0; i < m_vectstrTokenList.size(); i++){ // トークンリスト分繰り返す.
 			// ワイド文字はコンソール出力が厳しいので, 出力が簡単なモノを代理で出力.
 			if (m_vectstrTokenList[i].find(_T("<WCS>")) != std::string::npos){	// "<WCS>"があった場合.
-				std::wcout << _T("<WCS>") << std::endl;	// "<WCS>"を出力.
+				//std::wcout << _T("<WCS>") << std::endl;	// "<WCS>"を出力.
 			}
 			else{	// それ以外.
-				std::wcout << m_vectstrTokenList[i] << std::endl;	// i番目を出力.
+				//std::wcout << m_vectstrTokenList[i] << std::endl;	// i番目を出力.
 			}
 		}
 
@@ -103,5 +103,13 @@ BOOL CLexicalAnalyzer::Analyze(tstring tstrSourceFileName){
 
 	// 戻り値を返す.
 	return TRUE;	// TRUEを返す.
+
+}
+
+// 指定された番号のトークンを取得するメンバ関数GetToken.
+tstring CLexicalAnalyzer::GetToken(unsigned int uiNo){
+
+	// uiNo番目を返す.
+	return m_vectstrTokenList[uiNo];	// m_vectstrTokenList[uiNo]を返す.
 
 }

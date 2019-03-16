@@ -345,6 +345,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\SyntaxAnalyzer.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\TextFile.cpp"
 				>
 			</File>
@@ -372,6 +376,14 @@
 			</File>
 			<File
 				RelativePath=".\resource.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SyntaxAnalyzer.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SyntaxInfo.h"
 				>
 			</File>
 			<File
